@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const mongoose = require("mongoose");
+const todo = require("./routers/todo");
 const PORT = process.env.PORT || 3000;
 require("dotenv").config();
 
@@ -20,4 +21,5 @@ app.use(
     credentials: true,
   })
 );
+app.use("/", todo);
 app.listen(PORT, () => console.log("Connected to port "));
