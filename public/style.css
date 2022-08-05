@@ -7,15 +7,12 @@
   margin: 0;
   padding: 0;
 }
-
+/* general style */
 body {
   font-family: "Edu NSW ACT Foundation", cursive;
   line-height: 1.15;
 }
 
-h2 {
-  font-family: "Roboto", sans-serif;
-}
 .todo-container {
   color: white;
   position: absolute;
@@ -34,8 +31,9 @@ h2 {
 .todo {
   width: 400px;
 }
-
+/* typography */
 h2 {
+  font-family: "Roboto", sans-serif;
   padding: 10px;
   font-size: 2rem;
 }
