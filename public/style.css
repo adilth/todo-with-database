@@ -64,8 +64,11 @@ textarea {
   padding: 5px;
   background-color: rgb(51, 212, 51);
   font-family: "Edu TAS Beginner", sans-serif;
+  transition: 0.3s ease-in-out;
 }
-
+.todo-header button:hover {
+  background-color: rgb(41, 181, 41);
+}
 ul {
   list-style: none;
 }
