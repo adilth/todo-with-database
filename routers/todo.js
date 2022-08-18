@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Todo = require("../models/Todo");
+const todoController = require("../controllers/todo");
 
 router.get("/", async (req, res) => {
   try {
@@ -52,10 +53,12 @@ router
     );
   });
 //DELETE
-app.route("/remove/:id").get((req, res) => {
+router.route("/remove/:id").get((req, res) => {
   const id = req.params.id;
   Todo.findByIdAndRemove(id, (err) => {
     if (err) return res.send(500, err);
     res.redirect("/");
   });
 });
+
+module.exports = router;
