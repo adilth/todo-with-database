@@ -3,13 +3,16 @@ const app = express();
 const cors = require("cors");
 const mongoose = require("mongoose");
 const todo = require("./routers/todo");
+const edite = require("./routers/edite");
 const PORT = process.env.PORT || 3000;
-require("dotenv").config();
+require("dotenv").config({ path: "./config/.env" });
+const connectDb = require("./config/db");
 
-mongoose.connect(process.env.CONNECT_DB, { useNewUrlParser: true }, () =>
-  console.log("Connect to DB")
-);
+//connect db
 
+connectDb();
+
+//middleware
 app.use(express.json());
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -22,4 +25,5 @@ app.use(
   })
 );
 app.use("/", todo);
+app.use("/edite", edite);
 app.listen(PORT, () => console.log("Connected to port "));
