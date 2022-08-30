@@ -5,7 +5,7 @@ const todoSchema = new mongoose.Schema({
     type: "string",
     required: true,
   },
-  tasks: {
+  content: {
     type: "string",
     required: true,
   },
