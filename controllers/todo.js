@@ -11,13 +11,13 @@ module.exports = {
   },
   createTodo: async (req, res) => {
     // const { title, content } = req.body
-    const tasks = await new Todo({
+    const todoTasks = new Todo({
       title: req.body.title,
       content: req.body.content,
     });
     try {
-      await tasks.save();
-      console.log(tasks);
+      await todoTasks.save();
+      console.log(todoTasks);
       res.redirect("/");
     } catch (e) {
       res.status(501).send(e);
